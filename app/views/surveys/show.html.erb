@@ -1,0 +1,83 @@
+<%= h1_tag(class: %w(display-3)){ t('survey.view_survey') } %>
+<%= br_tag %>
+<%= br_tag %>
+
+<%= div_tag(class: %w(container)) do %>
+
+  <%= div_tag(class: %w(card)) do %>
+
+    <%= div_tag(class: %w(card-body)) do %>
+
+      <%= h4_tag(class: %w(card-title)){ @survey.question } %>
+
+      <%= p_tag(class: %w(card-text)) do %>
+
+        <%= form_for(@survey) do |f| %>
+
+          <%= hidden_field(:survey, :is_active, value: false) %>
+
+          <%= div_row_tag(class: %w(form-group)) do %>
+            <%= div_tag(class: %w(col-5)){} %>
+            <%= div_tag(class: %w(col-3)) do %>
+              <%= button_tag(t('survey.close'), id: :survey_submit, name: :commit, type: :submit, class: %w(form-control btn btn-primary)) %>
+            <% end %>
+          <% end %>
+
+        <% end if @survey.is_active? %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.status') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)){ @survey.status } %>
+        <% end %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right), for: :survey_refresh){ t('survey.auto_refresh') } %>
+          <%= div_col_xs_6_tag(){ input_tag(id: :survey_refresh, type: :checkbox, class: %w(form-check-label h-100)){} } %>
+        <% end if @survey.is_active? %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.created_by') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)){ @survey.surveyor_name } %>
+        <% end %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.created_at') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)){ @survey.created_at.to_s } %>
+        <% end %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.number_of_answers') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)){ @survey.answers_count.to_s } %>
+        <% end %>
+
+        <%= div_row_tag do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.answers') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)) do %>
+            <%= div_tag(class: %w(progress)) do %>
+              <%= progress_bar(@survey.percentage_yes) %>
+              <%= progress_bar(@survey.percentage_no, :danger) %>
+            <% end %>
+          <% end %>
+        <% end if @survey.answers_count > 0 %>
+
+        <%= div_row_tag(class: %w(align-items-center)) do %>
+          <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ t('survey.age_group') } %>
+          <%= label_tag(nil, class: %w(col-6 col-form-label)) do %>
+            <%# ChartKick Pie Chart (https://www.chartkick.com) %>
+            <%= javascript_include_tag 'https://www.gstatic.com/charts/loader.js' %>
+            <%= pie_chart @survey.answers_by_age_groups %>
+          <% end %>
+        <% end if @survey.answers_count > 0 %>
+
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+<% end %>
+
+<%#= Table/report canvas with columns for DataTable (https://datatables.net) %>
+<%= datatable_table(Answer, @survey) if @survey.is_active? &&  @survey.answers_count > 0 %>
+
+<%= br_tag %>

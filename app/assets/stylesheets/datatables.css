@@ -1,0 +1,70 @@
+/* https://datatables.net */
+
+/*
+*= require datatables/dataTables.bootstrap
+*
+*optional add '=' enable
+* TODO: (un?)comment the (un?)used options
+*= require datatables/extensions/AutoFill/autoFill.bootstrap
+*= require datatables/extensions/Buttons/buttons.bootstrap
+*= require datatables/extensions/ColReorder/colReorder.bootstrap
+*= require datatables/extensions/FixedColumns/fixedColumns.bootstrap
+*= require datatables/extensions/FixedHeader/fixedHeader.bootstrap
+*= require datatables/extensions/KeyTable/keyTable.bootstrap
+*= require datatables/extensions/Responsive/responsive.bootstrap
+*= require datatables/extensions/RowReorder/rowReorder.bootstrap
+*= require datatables/extensions/Scroller/scroller.bootstrap
+*= require datatables/extensions/Select/select.bootstrap
+*/
+
+/* dataTables CSS modification & positioning */
+/* From glyphicons to Font-Awesome */
+/* Bootstrap v3 => v4 */
+
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+    right: 0 !important;
+    content: "" !important;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    right: 0 !important;
+    content: "" !important;
+}
+
+table.dataTable thead th {
+    position: relative;
+    background-image: none !important;
+}
+
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+    position: absolute !important;
+    top: 12px !important;
+    right: 8px !important;
+    display: block !important;
+    font-family: FontAwesome !important;
+}
+
+table.dataTable thead th.sorting:after {
+    content: "\f0dc" !important;
+    color: #ddd !important;
+    font-size: 0.8em !important;
+    padding-top: 0.12em !important;
+}
+
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de" !important;
+}
+
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd" !important;
+}

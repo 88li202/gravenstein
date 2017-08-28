@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one: {
+  email: 'john.wick@film.com',
+  first_name: 'John',
+  last_name: 'WICK',
+  age: 35
+}

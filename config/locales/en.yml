@@ -1,0 +1,67 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  application:
+    my_app: 'My %{app_name}!'
+    register_app: ' Register to %{app_name}!'
+    update_app: ' Update your %{app_name}!'
+    welcome_app: ' Welcome to %{app_name}!'
+    you_app: ' You at %{app_name}!'
+  answer:
+    cant_save: "Can't save!"
+    'no': 'no'
+    saved: 'Answer saved!'
+    vote: 'Vote!'
+    'yes': 'yes'
+  result:
+    denormalized_successfully: 'All closed surveys are now denormalized successfully!'
+    denormalized_with_errors: 'Unexpected errors occured during the denormalization!'
+  survey:
+    active: 'Active'
+    age_group: 'Age group:'
+    answers: 'Answers:'
+    auto_refresh: 'Auto refresh each 1 min?'
+    close: 'Close the survey'
+    closed: 'Closed'
+    created_at: 'Created at:'
+    created_by: 'Created by:'
+    create_survey: 'Create Survey'
+    created_successfully: 'Survey has been successfully created!'
+    enter_question: 'Enter your dichotomous question here...'
+    new_survey: 'New Survey'
+    no_answers: 'No answers'
+    number_of_answers: 'Number of answers:'
+    plus_year_old: '+ years old'
+    question: 'Question'
+    simple_tool: 'This is a simple survey tool.'
+    status: 'Status:'
+    updated_successfully: 'Survey has been successfully updated!'
+    view_survey: 'View Survey'
+  user:
+    age: 'Age'
+    change_password: 'Change Password'
+    email: 'Email'
+    first_name: 'First name'
+    last_name: 'Last name'
+    log_in: 'Log in'
+    my_profile: 'My profile'
+    password: 'Password'
+    password_confirmation: 'Password Confirmation'
+    register: 'Register'
+    registered: 'User registered!'
+    remember_me: 'Remember me'
+    update: 'Update'
+    updated: 'User updated!'
+  user_session:
+    are_you_sure: 'Are you sure you want to logout?'
+    invalid_login: 'Invalid login!'
+    login: 'Login'
+    login_successful: 'Login successful!'
+    logout: 'Logout'
+    logout_successful: 'Logout successful!'
+    you_must_be_logged: 'You must be logged in to access this page!'
+    you_must_be_unlogged: 'You must not be logged to access this page!'

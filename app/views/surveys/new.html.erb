@@ -1,0 +1,31 @@
+<%# +SPEC+: <em>A survey consists of one question represented as a single string.</em> %>
+<%# +SPEC+: <em>A user should be able to create any number of surveys.</em> %>
+<%= h1_tag(class: %w(display-3)){ t('survey.new_survey') } %>
+<%= br_tag %>
+<%= br_tag %>
+
+<%= form_with(model: @survey, local: true) do %>
+
+  <%= div_tag(class: %w(container)) do %>
+
+    <%= alert_tag(@survey) %>
+
+    <%= div_row_tag(class: %w(form-group)) do %>
+
+      <%= label_tag(:survey_question, class: %w(col-2 col-form-label)){ t('survey.question') } %>
+
+      <%= div_col_xs_10_tag do %>
+        <%= input_tag(id: :survey_question, class: %w(form-control), type: :text, name: "survey[question]", placeholder: t('survey.enter_question'), max: 512){} %>
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+  <%= div_row_tag(class: %w(justify-content-center w-100)) do %>
+
+    <%= div_col_xs_2_tag(){ button_tag(id: :survey_submit, type: :submit, class: %w(form-control btn btn-primary btn-block), name: :commit){ t('survey.create_survey') } } %>
+
+  <% end %>
+
+<% end %>

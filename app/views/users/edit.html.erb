@@ -1,0 +1,29 @@
+<%= div_tag(class: %w(container h-100 d-flex)) do %>
+
+  <%= div_tag(class: %w(jumbotron auto-vertical w-100)) do %>
+
+    <%= user_header(@user, t('application.update_app', app_name: ApplicationRecord::NAME), notice) %>
+
+    <%= p_tag(class: %w(lead)) do %>
+
+      <%= form_for(@user) do |f| %>
+
+        <%= render :partial => "form", :object => f %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= div_tag(class: %w(col-3)){} %>
+          <%= div_tag(class: %w(col-3)) do %>
+            <%= link_to(t('user.my_profile'), user_path, class: %w(form-control btn)) %>
+          <% end %>
+          <%= div_tag(class: %w(col-3)) do %>
+            <%= button_tag(t('user.update'), id: :user_submit, name: :commit, type: :submit, class: %w(form-control btn btn-primary)) %>
+          <% end %>
+        <% end %>
+
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+<% end %>

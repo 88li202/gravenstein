@@ -1,0 +1,31 @@
+<%= div_tag(class: %w(container h-100 d-flex)) do %>
+
+  <%= div_tag(class: %w(jumbotron auto-vertical w-100)) do %>
+
+    <%= user_header(@user, t('application.you_app', app_name: ApplicationRecord::NAME), notice) %>
+
+    <%= p_tag(class: %w(lead)) do %>
+
+      <%= form_for(@user) do %>
+
+        <% %w(email first_name last_name age login_count last_request_at last_login_at current_login_at last_login_ip current_login_ip).each do |attr| %>
+          <%= div_row_tag(class: %w(form-group)) do %>
+            <%= label_tag(nil, class: %w(col-5 col-form-label text-right)){ attr.humanize } %>
+            <%= label_tag(nil, class: %w(col-6 col-form-label)){ @user[attr].to_s } %>
+          <% end %>
+        <% end %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= div_tag(class: %w(col-5)){} %>
+          <%= div_tag(class: %w(col-3)) do %>
+            <%= link_to(t('user.update'), edit_user_path, class: %w(form-control btn)) %>
+          <% end %>
+        <% end %>
+
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+<% end %>

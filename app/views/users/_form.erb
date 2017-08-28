@@ -1,0 +1,29 @@
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_email, class: %w(col-3 col-form-label text-right)){ t('user.email') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_email, name: 'user[email]', type: :text, class: %w(form-control), value: form.object.email){} } %>
+<% end %>
+
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_first_name, class: %w(col-3 col-form-label text-right)){ t('user.first_name') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_first_name, name: 'user[first_name]', type: :text, class: %w(form-control), value: form.object.first_name){} } %>
+<% end %>
+
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_last_name, class: %w(col-3 col-form-label text-right)){ t('user.last_name') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_last_name, name: 'user[last_name]', type: :text, class: %w(form-control), value: form.object.last_name){} } %>
+<% end %>
+
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_age, class: %w(col-3 col-form-label text-right)){ t('user.age') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_age, name: 'user[age]', type: :number, class: %w(form-control), value: form.object.age, min: 0){} } %>
+<% end %>
+
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_password, class: %w(col-3 col-form-label text-right)){ t(form.object.new_record? ? 'user.password' : 'user.change_password') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_password, name: 'user[password]', type: :password, class: %w(form-control)){} } %>
+<% end %>
+
+<%= div_row_tag(class: %w(form-group)) do %>
+  <%= label_tag(:user_password_confirmation, class: %w(col-3 col-form-label text-right)){ t('user.password_confirmation') } %>
+  <%= div_col_xs_6_tag(){ input_tag(id: :user_password_confirmation, name: 'user[password_confirmation]', type: :password, class: %w(form-control)){} } %>
+<% end %>

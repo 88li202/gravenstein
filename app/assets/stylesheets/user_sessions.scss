@@ -1,0 +1,25 @@
+// Place all the styles related to the user_sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  height: 100%;
+}
+
+// Vertical alignment for the user session pages.
+.auto-vertical {
+  margin-top:    auto !important;
+  margin-bottom: auto !important;
+}
+
+// Adjust the size & position of the 'Remember me' checkbox
+#user_session_remember_me {
+  margin-left: 3px;
+  transform: scale(1.5);
+}
+
+// Bootstrap v3 => v4 (?)
+// Reset cursor on link inside the user form.
+a.form-control {
+  cursor: default !important;
+}

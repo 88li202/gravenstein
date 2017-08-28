@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= ApplicationRecord::NAME %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="icon" type="image/png" href="<%= image_path("#{ApplicationRecord::NAME.downcase}.png") %>" sizes="128x128">
+  </head>
+
+  <body>
+
+    <%= ul_tag(class: %w(nav justify-content-center)) do %>
+        <%= li_tag(class: %w(nav-item)){ image_tag("#{ApplicationRecord::NAME.downcase}.png", size: '32x32') } %>
+        <%= li_tag(class: %w(nav-item)){ link_to(current_user.email, '#', class: %w(nav-link disabled)) } %>
+        <%= li_tag(class: %w(nav-item)){ link_to(Survey.name.pluralize, surveys_path, class: %w(nav-link active)) } %>
+        <%= li_tag(class: %w(nav-item)){ link_to(t('application.my_app', app_name: ApplicationRecord::NAME), user_path(current_user), class: %w(nav-link)) } %>
+        <%= li_tag(class: %w(nav-item)){ link_to(t('user_session.logout'), user_session_path(current_user_session), :method => :delete, :confirm => t('user_session.are_you_sure'), :class => %w(nav-link)) } %>
+    <% end if current_user.present? %>
+
+    <%= yield %>
+
+  </body>
+</html>

@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>test.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="../app/assets/javascripts/answers_js.html">answers.js</a>
+  
+    <li><a href="../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="../app/assets/javascripts/datatables_js.html">datatables.js</a>
+  
+    <li><a href="../app/assets/javascripts/surveys_js.html">surveys.js</a>
+  
+    <li><a href="../app/assets/javascripts/user_sessions_js.html">user_sessions.js</a>
+  
+    <li><a href="../app/assets/javascripts/users_js.html">users.js</a>
+  
+    <li><a href="../app/assets/stylesheets/answers_scss.html">answers.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/datatables_css.html">datatables.css</a>
+  
+    <li><a href="../app/assets/stylesheets/surveys_scss.html">surveys.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/user_sessions_scss.html">user_sessions.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../app/views/answers/_answer_json_jbuilder.html">_answer.json.jbuilder</a>
+  
+    <li><a href="../app/views/answers/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../app/views/surveys/_survey_json_jbuilder.html">_survey.json.jbuilder</a>
+  
+    <li><a href="../app/views/surveys/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../db/production_sqlite3.html">production.sqlite3</a>
+  
+    <li><a href="../lib/tasks/survey_rake.html">survey.rake</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../log/test_log.html">test.log</a>
+  
+    <li><a href="../log/tst_log.html">tst.log</a>
+  
+    <li><a href="../package_json.html">package.json</a>
+  
+    <li><a href="../public/404_html.html">404.html</a>
+  
+    <li><a href="../public/422_html.html">422.html</a>
+  
+    <li><a href="../public/500_html.html">500.html</a>
+  
+    <li><a href="../public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="../public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/test.log">
+
+<pre>[1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS &quot;answers&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE &quot;answers&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;yes_no&quot; boolean NOT NULL, &quot;survey_id&quot; integer NOT NULL, &quot;respondent_id&quot; integer NOT NULL, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35m (6.1ms)[0m  [1m[35mCREATE  INDEX &quot;index_answers_on_respondent_id&quot; ON &quot;answers&quot; (&quot;respondent_id&quot;)[0m
+[1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_answers_on_respondent_id&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_answers_on_respondent_id&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX &quot;index_answers_on_survey_id&quot; ON &quot;answers&quot; (&quot;survey_id&quot;)[0m
+[1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS &quot;results&quot;[0m
+[1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE &quot;results&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;answers_by_age_groups&quot; text NOT NULL, &quot;answers_count&quot; integer NOT NULL, &quot;percentage_yes&quot; integer NOT NULL, &quot;survey_id&quot; integer NOT NULL, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS &quot;sessions&quot;[0m
+[1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE &quot;sessions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;session_id&quot; varchar NOT NULL, &quot;data&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35m (8.1ms)[0m  [1m[35mCREATE UNIQUE INDEX &quot;index_sessions_on_session_id&quot; ON &quot;sessions&quot; (&quot;session_id&quot;)[0m
+[1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS &quot;surveys&quot;[0m
+[1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE &quot;surveys&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;is_active&quot; boolean DEFAULT &#39;t&#39; NOT NULL, &quot;result_id&quot; integer, &quot;surveyor_id&quot; integer NOT NULL, &quot;question&quot; varchar NOT NULL, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35m (7.8ms)[0m  [1m[35mCREATE  INDEX &quot;index_surveys_on_is_active&quot; ON &quot;surveys&quot; (&quot;is_active&quot;)[0m
+[1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_surveys_on_is_active&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_surveys_on_is_active&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX &quot;index_surveys_on_surveyor_id&quot; ON &quot;surveys&quot; (&quot;surveyor_id&quot;)[0m
+[1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS &quot;users&quot;[0m
+[1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE &quot;users&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;email&quot; varchar, &quot;crypted_password&quot; varchar, &quot;password_salt&quot; varchar, &quot;persistence_token&quot; varchar, &quot;single_access_token&quot; varchar, &quot;perishable_token&quot; varchar, &quot;login_count&quot; integer DEFAULT 0 NOT NULL, &quot;failed_login_count&quot; integer DEFAULT 0 NOT NULL, &quot;last_request_at&quot; datetime, &quot;current_login_at&quot; datetime, &quot;last_login_at&quot; datetime, &quot;current_login_ip&quot; varchar, &quot;last_login_ip&quot; varchar, &quot;active&quot; boolean DEFAULT &#39;f&#39;, &quot;approved&quot; boolean DEFAULT &#39;f&#39;, &quot;confirmed&quot; boolean DEFAULT &#39;f&#39;, &quot;first_name&quot; varchar, &quot;last_name&quot; varchar, &quot;age&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX &quot;index_users_on_perishable_token&quot; ON &quot;users&quot; (&quot;perishable_token&quot;)[0m
+[1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_users_on_perishable_token&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_users_on_perishable_token&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX &quot;index_users_on_persistence_token&quot; ON &quot;users&quot; (&quot;persistence_token&quot;)[0m
+[1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_users_on_persistence_token&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_users_on_persistence_token&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_users_on_perishable_token&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_users_on_perishable_token&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX &quot;index_users_on_single_access_token&quot; ON &quot;users&quot; (&quot;single_access_token&quot;)[0m
+[1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL PRIMARY KEY)[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
+[1m[35m (5.5ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (20170827000005)[0m
+[1m[35m (5.3ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (version) VALUES</pre>
+
+<p>(20170827000001), (20170827000003), (20170827000004), (20170827000002);</p>
+
+<p>[0m</p>
+
+<pre>[1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; varchar NOT NULL PRIMARY KEY, &quot;value&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;test&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.043947&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.043947&quot;]]
+[1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
+[1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+[1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;users&quot;[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;john.wick@film.com&#39;, &#39;John&#39;, &#39;WICK&#39;, 35, &#39;2017-08-28 06:21:19.131595&#39;, &#39;2017-08-28 06:21:19.131595&#39;, 980190962)[0m
+[1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+[1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>AnswersControllerTest: test_should_create_answer</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;03f38800780292cb4c188579e7a73b447492673705081d8e7a244d55f46fc2e8d9d6aefa1940c7da6ed93867fe783fc88319b0e58c0a8ffe5efd8f274619bf61&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;kkxLjc4ihOdwosc7J3b4&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;ZBmS1ZrymAvbMRFG0b3&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$TIpqf1L1eSLOdoUHM24QFePMk8hmLSceKqzjni2H7xmSFrtmSfgiO&quot;], [&quot;persistence_token&quot;, &quot;03f38800780292cb4c188579e7a73b447492673705081d8e7a244d55f46fc2e8d9d6aefa1940c7da6ed93867fe783fc88319b0e58c0a8ffe5efd8f274619bf61&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;kkxLjc4ihOdwosc7J3b4&quot;], [&quot;perishable_token&quot;, &quot;fjuzG1BApNiawoQ5kNNw&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.326749&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He can kill two stones with one bird?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;He can kill two stones with one bird?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.554648&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.554648&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:19 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;onie_funk@frami.io&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;onie_funk@frami.io&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;2f922d1ee519d2c746daeaeed4d95fb22e76c2d381e761768dcca1788e3fbfc87824cff36daf444d7a5006d58e8d85ef84098b149aacb2faad94edff88cb6511&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;qxU1ae2A7xA9haJoVlCx&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;onie_funk@frami.io&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$I0/5sG0CQEzvHpENEtxB7Omum93HepW7CXDqd/HGO0hsDM2a38q.K&quot;], [&quot;password_salt&quot;, &quot;rD7Co6AphcKGHApugR&quot;], [&quot;persistence_token&quot;, &quot;2f922d1ee519d2c746daeaeed4d95fb22e76c2d381e761768dcca1788e3fbfc87824cff36daf444d7a5006d58e8d85ef84098b149aacb2faad94edff88cb6511&quot;], [&quot;single_access_token&quot;, &quot;qxU1ae2A7xA9haJoVlCx&quot;], [&quot;perishable_token&quot;, &quot;Pfm48Eo2vh2ykQsQrzGC&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:19.624631&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:19.624567&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.624904&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.624904&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 63ms (ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190962], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.637174&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.637174&quot;]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot;[0m</pre>
+
+<p>Started POST “/answers.js” for 127.0.0.1 at 2017-08-27 23:21:19 -0700
+Processing by <a
+href="../AnswersController.html#method-i-create">AnswersController#create</a>
+as JS</p>
+
+<pre>Parameters: {&quot;survey_id&quot;=&gt;&quot;1&quot;, &quot;yes_no&quot;=&gt;&quot;false&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;2f922d1ee519d2c746daeaeed4d95fb22e76c2d381e761768dcca1788e3fbfc87824cff36daf444d7a5006d58e8d85ef84098b149aacb2faad94edff88cb6511&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;sK04Y3eVCnPoo6RAVsmG&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:19.643766&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.644226&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Unpermitted parameter: :format</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190963], [&quot;LIMIT&quot;, 1]]
+[1m[36mSurvey Load (0.1ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.649557&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.649557&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Rendering answers/create.js.erb
+Rendered answers/create.js.erb (0.5ms)</pre>
+
+<p>Completed 200 OK in 12ms (Views: 2.5ms | ActiveRecord: 0.7ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>AnswersControllerTest: test_should_get_index</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;45ba9391d3d89070412cf6c04899502081c5b11d921cf524dc0f5fdf20836d6af765d952cced65ce3de29b8a8290cd02e17a7377e3abcb96dd9e7534eb24df3f&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;89AaCvh6rOxXkGOOvln&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;2fZWwycGS98Wz3lgVO&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$qwGefLd06yoCIFvQEkaIN.psWadLOhxogtARD19dNP8gsy00BLBB6&quot;], [&quot;persistence_token&quot;, &quot;45ba9391d3d89070412cf6c04899502081c5b11d921cf524dc0f5fdf20836d6af765d952cced65ce3de29b8a8290cd02e17a7377e3abcb96dd9e7534eb24df3f&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;89AaCvh6rOxXkGOOvln&quot;], [&quot;perishable_token&quot;, &quot;IpXyJbP9fRpmmDPjSdXY&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.708122&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He once made a weeping willow laugh?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;He once made a weeping willow laugh?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.710323&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.710323&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:19 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;mathias@altenwerthmiller.co&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;mathias@altenwerthmiller.co&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;a6fa01874fcaca505cc4664cbcf002c65aa31294392547eecbf497888d3091ccaf9d67b552aadc753c8d3f1bf6ab939b1753b0e49cc0e2938014f712eb7b92c7&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;zbYfZ75G2TN2SBNrnkF2&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;mathias@altenwerthmiller.co&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$PW2oaEhexzWgbxavY5v0ROpsgfbz28pC1f0iB30bO0xNpvk1hzBaK&quot;], [&quot;password_salt&quot;, &quot;Gl81H9OO89F7dRQpsJ7y&quot;], [&quot;persistence_token&quot;, &quot;a6fa01874fcaca505cc4664cbcf002c65aa31294392547eecbf497888d3091ccaf9d67b552aadc753c8d3f1bf6ab939b1753b0e49cc0e2938014f712eb7b92c7&quot;], [&quot;single_access_token&quot;, &quot;zbYfZ75G2TN2SBNrnkF2&quot;], [&quot;perishable_token&quot;, &quot;iYyPszeDfPLGWwSPqU&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:19.766301&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:19.766233&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.766509&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.766509&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190962], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.769088&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.769088&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Started GET “/answers.json?survey_id=1” for 127.0.0.1 at 2017-08-27
+23:21:19 -0700 Processing by <a
+href="../AnswersController.html#method-i-index">AnswersController#index</a>
+as JSON</p>
+
+<pre>Parameters: {&quot;survey_id&quot;=&gt;&quot;1&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;a6fa01874fcaca505cc4664cbcf002c65aa31294392547eecbf497888d3091ccaf9d67b552aadc753c8d3f1bf6ab939b1753b0e49cc0e2938014f712eb7b92c7&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;4dA71UiD1gWOiHaHBWX&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:19.772139&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.772474&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Unpermitted parameter: :format Unpermitted parameter: :format Unpermitted
+parameter: :format Unpermitted parameter: :format Unpermitted parameter:
+:format Unpermitted parameter: :format Unpermitted parameter: :format</p>
+
+<pre>[1m[36mSurvey Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT &quot;answers&quot;.&quot;id&quot;) FROM &quot;answers&quot; LEFT OUTER JOIN &quot;users&quot; ON &quot;users&quot;.&quot;id&quot; = &quot;answers&quot;.&quot;respondent_id&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 1]]
+Rendering answers/index.json.jbuilder
+[1m[35mSQL (0.1ms)[0m  [1m[34mSELECT &quot;answers&quot;.&quot;id&quot; AS t0_r0, &quot;answers&quot;.&quot;yes_no&quot; AS t0_r1, &quot;answers&quot;.&quot;survey_id&quot; AS t0_r2, &quot;answers&quot;.&quot;respondent_id&quot; AS t0_r3, &quot;answers&quot;.&quot;created_at&quot; AS t0_r4, &quot;answers&quot;.&quot;updated_at&quot; AS t0_r5, &quot;users&quot;.&quot;id&quot; AS t1_r0, &quot;users&quot;.&quot;email&quot; AS t1_r1, &quot;users&quot;.&quot;crypted_password&quot; AS t1_r2, &quot;users&quot;.&quot;password_salt&quot; AS t1_r3, &quot;users&quot;.&quot;persistence_token&quot; AS t1_r4, &quot;users&quot;.&quot;single_access_token&quot; AS t1_r5, &quot;users&quot;.&quot;perishable_token&quot; AS t1_r6, &quot;users&quot;.&quot;login_count&quot; AS t1_r7, &quot;users&quot;.&quot;failed_login_count&quot; AS t1_r8, &quot;users&quot;.&quot;last_request_at&quot; AS t1_r9, &quot;users&quot;.&quot;current_login_at&quot; AS t1_r10, &quot;users&quot;.&quot;last_login_at&quot; AS t1_r11, &quot;users&quot;.&quot;current_login_ip&quot; AS t1_r12, &quot;users&quot;.&quot;last_login_ip&quot; AS t1_r13, &quot;users&quot;.&quot;active&quot; AS t1_r14, &quot;users&quot;.&quot;approved&quot; AS t1_r15, &quot;users&quot;.&quot;confirmed&quot; AS t1_r16, &quot;users&quot;.&quot;first_name&quot; AS t1_r17, &quot;users&quot;.&quot;last_name&quot; AS t1_r18, &quot;users&quot;.&quot;age&quot; AS t1_r19, &quot;users&quot;.&quot;created_at&quot; AS t1_r20, &quot;users&quot;.&quot;updated_at&quot; AS t1_r21 FROM &quot;answers&quot; LEFT OUTER JOIN &quot;users&quot; ON &quot;users&quot;.&quot;id&quot; = &quot;answers&quot;.&quot;respondent_id&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 1]]
+Rendered answers/_answer.json.jbuilder (0.3ms)
+Rendered answers/index.json.jbuilder (2.6ms)</pre>
+
+<p>Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 0.7ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>ResultTest: test_Check_the_full_flow_up_to_the_result_creation</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;gleason_allan@hauck.net&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;2f034d32bef246704621c04e6c175d2e24155611c650cccb8d8ed3cb0bdaa2a0c3ab1c447d3fa121a2accb8dfd68d1749622b0592cd0cd493345687faf005750&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;hckQebARfX8zbbCA5tHZ&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;gleason_allan@hauck.net&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$q0dKlvpSVORUb4wRk0sfzexqgdhxHX2opnQ508r6MURk737hkH7Oq&quot;], [&quot;password_salt&quot;, &quot;vuGaEQ1JHC9eoQH7ETe&quot;], [&quot;persistence_token&quot;, &quot;2f034d32bef246704621c04e6c175d2e24155611c650cccb8d8ed3cb0bdaa2a0c3ab1c447d3fa121a2accb8dfd68d1749622b0592cd0cd493345687faf005750&quot;], [&quot;single_access_token&quot;, &quot;hckQebARfX8zbbCA5tHZ&quot;], [&quot;perishable_token&quot;, &quot;I1RimHl4mc17sotrYh&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;first_name&quot;, &quot;Allan&quot;], [&quot;last_name&quot;, &quot;Gleason&quot;], [&quot;age&quot;, 75], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.836205&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.836205&quot;]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;cruickshank.loma@hilpert.net&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;4727c59332683ca1e653bb362ba1453c8b17b15d4e0ec4bc10b1d28f951bb6f6d9c26b8e1e1eda547669cb44bdd04b6ba8e203060c6104b2be59f222b9597c8b&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;X62RfHYozXymBKj8WKG9&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;cruickshank.loma@hilpert.net&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$lAWCv1lmLufZfVNwdVqrMOSp8ZxrH4mvDa2CyQpdl.7/4IjhcEOAK&quot;], [&quot;password_salt&quot;, &quot;toxDfd3jdwrPNFfQWmS&quot;], [&quot;persistence_token&quot;, &quot;4727c59332683ca1e653bb362ba1453c8b17b15d4e0ec4bc10b1d28f951bb6f6d9c26b8e1e1eda547669cb44bdd04b6ba8e203060c6104b2be59f222b9597c8b&quot;], [&quot;single_access_token&quot;, &quot;X62RfHYozXymBKj8WKG9&quot;], [&quot;perishable_token&quot;, &quot;YhqCuo4uCb56MYkVoY84&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;first_name&quot;, &quot;Loma&quot;], [&quot;last_name&quot;, &quot;Cruickshank&quot;], [&quot;age&quot;, 80], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.890371&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.890371&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;jacobson.gregg@lynch.info&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;55eb87500949e7afc2226a132ff0d4db5df614e9833c9ffab481f46d675995e58c522c7d66451deb96325be5f7680d59e8d9bffbeff58e1ba2836ed124d3e91b&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;zN6ZItWOpvbxCGwzU6MY&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;jacobson.gregg@lynch.info&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$dHFKM7oeTZfNJ3nLnEgFIOR5nl9XWWkA4/Pru1We5sCxn3z6UyQt6&quot;], [&quot;password_salt&quot;, &quot;XmI2KtR4igOGGv4aTLZ&quot;], [&quot;persistence_token&quot;, &quot;55eb87500949e7afc2226a132ff0d4db5df614e9833c9ffab481f46d675995e58c522c7d66451deb96325be5f7680d59e8d9bffbeff58e1ba2836ed124d3e91b&quot;], [&quot;single_access_token&quot;, &quot;zN6ZItWOpvbxCGwzU6MY&quot;], [&quot;perishable_token&quot;, &quot;H0qOOx6zHAn13yQBd&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;first_name&quot;, &quot;Gregg&quot;], [&quot;last_name&quot;, &quot;Jacobson&quot;], [&quot;age&quot;, 70], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.944024&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.944024&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;naomie_schmidt@gislasoncummerata.org&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;9489f2492a3d83f31a7c6c5e776134c1af721ed3df0183243fefee424f4b3cc3ef6aff055870db1d7343c9a8fa7a4ed0d52e2e6c44c485162a01d79330759623&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;zeT5m2xnlbGTo3NDudNF&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;naomie_schmidt@gislasoncummerata.org&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$wEERJRBcUxDvWYbnKQ5fzejU80no/UogTCvFrHNLDRM1VyOxliivm&quot;], [&quot;password_salt&quot;, &quot;ne36I1HgFIBSWrmqVGee&quot;], [&quot;persistence_token&quot;, &quot;9489f2492a3d83f31a7c6c5e776134c1af721ed3df0183243fefee424f4b3cc3ef6aff055870db1d7343c9a8fa7a4ed0d52e2e6c44c485162a01d79330759623&quot;], [&quot;single_access_token&quot;, &quot;zeT5m2xnlbGTo3NDudNF&quot;], [&quot;perishable_token&quot;, &quot;Tt68jj7AonWBEV5l992K&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;first_name&quot;, &quot;Naomie&quot;], [&quot;last_name&quot;, &quot;Schmidt&quot;], [&quot;age&quot;, 28], [&quot;created_at&quot;, &quot;2017-08-28 06:21:19.997271&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:19.997271&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;aric_cummerata@larsonkuphal.com&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;f6647b61bb4d91ab2b7dfc6f9802c29aa0fccdd25687a0191c1bf4214b374c7e6d46f8190f00a6a89d65bfb9dc04c0de71adf2cf6452606afc95f7018ef553e1&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;YLn4DqMe0hkqyfV7L02G&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;age&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;aric_cummerata@larsonkuphal.com&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$Q4ylc5RkHVwjRif63mhwku/BbtRPNUg/.4afKVjmfw.izOowNP7B2&quot;], [&quot;password_salt&quot;, &quot;UWDK2pXmiFe1f926Dz1&quot;], [&quot;persistence_token&quot;, &quot;f6647b61bb4d91ab2b7dfc6f9802c29aa0fccdd25687a0191c1bf4214b374c7e6d46f8190f00a6a89d65bfb9dc04c0de71adf2cf6452606afc95f7018ef553e1&quot;], [&quot;single_access_token&quot;, &quot;YLn4DqMe0hkqyfV7L02G&quot;], [&quot;perishable_token&quot;, &quot;OnERFRflGg7hlZi4TT9T&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;first_name&quot;, &quot;Aric&quot;], [&quot;last_name&quot;, &quot;Cummerata&quot;], [&quot;age&quot;, 20], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.050291&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.050291&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;His wallet is woven out of chupacabra leather?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190965], [&quot;question&quot;, &quot;His wallet is woven out of chupacabra leather?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.051876&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.051876&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;Bear hugs are what he gives bears?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190964], [&quot;question&quot;, &quot;Bear hugs are what he gives bears?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.053172&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.053172&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;Cars look both ways for him, before driving down a street?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190963], [&quot;question&quot;, &quot;Cars look both ways for him, before driving down a street?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.054229&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.054229&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He once got pulled over for speeding, and the cop got the ticket?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190965], [&quot;question&quot;, &quot;He once got pulled over for speeding, and the cop got the ticket?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.055374&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.055374&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;Panhandlers give him money?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190966], [&quot;question&quot;, &quot;Panhandlers give him money?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.056463&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.056463&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.057363&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.057363&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.058318&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.058318&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.059121&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.059121&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.059899&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.059899&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.060833&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.060833&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.061673&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.061673&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.062465&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.062465&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.063217&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.063217&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.064022&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.064022&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.064843&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.064843&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.065632&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.065632&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.066463&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.066463&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.067364&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.067364&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.068212&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.068212&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.069020&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.069020&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.069852&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.069852&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.070672&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.070672&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.071486&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.071486&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.072346&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.072346&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.073145&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.073145&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.074029&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.074029&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.074811&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.074811&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.075619&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.075619&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.076453&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.076453&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.077249&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.077249&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.078036&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.078036&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.078858&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.078858&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.079703&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.079703&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.080538&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.080538&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.081399&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.081399&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.082274&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.082274&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.083074&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.083074&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.083913&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.083913&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.084705&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.084705&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.085520&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.085520&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.086376&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.086376&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.087205&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.087205&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.088099&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.088099&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.088963&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.088963&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.089952&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.089952&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.090882&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.090882&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.091896&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.091896&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.093060&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.093060&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.093939&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.093939&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.094805&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.094805&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.095642&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.095642&quot;]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.096559&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.096559&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.097363&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.097363&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.098172&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.098172&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.099038&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.099038&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.102397&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.102397&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.103261&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.103261&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.104109&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.104109&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.104953&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.104953&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.105782&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.105782&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.106605&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.106605&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.107418&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.107418&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.108197&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.108197&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.108982&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.108982&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.109813&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.109813&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.110662&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.110662&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.111411&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.111411&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.112241&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.112241&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.113023&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.113023&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.113813&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.113813&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.114597&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.114597&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.115401&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.115401&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.116222&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.116222&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.117010&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.117010&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.117738&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.117738&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.118501&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.118501&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.119258&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.119258&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.120034&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.120034&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.120798&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.120798&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.121613&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.121613&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.122451&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.122451&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.123255&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.123255&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.124029&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.124029&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.124831&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.124831&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.125593&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.125593&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.126406&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.126406&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.127172&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.127172&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.127975&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.127975&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.128765&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.128765&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.129552&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.129552&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.130386&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.130386&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.131138&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.131138&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.131962&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.131962&quot;]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.132898&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.132898&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.133722&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.133722&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.134524&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.134524&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.135326&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.135326&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.136398&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.136398&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 5], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.137453&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.137453&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.138326&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.138326&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 3], [&quot;respondent_id&quot;, 980190966], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.139100&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.139100&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190965], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.139875&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.139875&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 1], [&quot;respondent_id&quot;, 980190963], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.140687&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.140687&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;f&quot;], [&quot;survey_id&quot;, 2], [&quot;respondent_id&quot;, 980190964], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.141448&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.141448&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;answers&quot; (&quot;yes_no&quot;, &quot;survey_id&quot;, &quot;respondent_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?)[0m  [[&quot;yes_no&quot;, &quot;t&quot;], [&quot;survey_id&quot;, 4], [&quot;respondent_id&quot;, 980190967], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.142429&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.142429&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He once got pulled over for speeding, and the cop got the ticket?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;question&quot; = ? AND (&quot;surveys&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;question&quot;, &quot;He once got pulled over for speeding, and the cop got the ticket?&quot;], [&quot;id&quot;, 4], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;surveys&quot; SET &quot;is_active&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;surveys&quot;.&quot;id&quot; = ?[0m  [[&quot;is_active&quot;, &quot;f&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.144013&quot;], [&quot;id&quot;, 4]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[36mSurvey Load (0.1ms)[0m  [1m[34mSELECT &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;result_id&quot; IS NULL[0m  [[&quot;is_active&quot;, &quot;f&quot;]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, users.age / 10 AS users_age_10 FROM &quot;answers&quot; INNER JOIN &quot;users&quot; ON &quot;users&quot;.&quot;id&quot; = &quot;answers&quot;.&quot;respondent_id&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ? GROUP BY users.age / 10[0m  [[&quot;survey_id&quot;, 4]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 4]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ? AND &quot;answers&quot;.&quot;yes_no&quot; = ?[0m  [[&quot;survey_id&quot;, 4], [&quot;yes_no&quot;, &quot;t&quot;]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Load (0.0ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 4], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;results&quot; (&quot;answers_by_age_groups&quot;, &quot;answers_count&quot;, &quot;percentage_yes&quot;, &quot;survey_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?)[0m  [[&quot;answers_by_age_groups&quot;, &quot;---\n20+ years old: 9\n70+ years old: 4\n80+ years old: 4\n&quot;], [&quot;answers_count&quot;, 17], [&quot;percentage_yes&quot;, 53], [&quot;survey_id&quot;, 4], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.157134&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.157134&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190965], [&quot;LIMIT&quot;, 1]]
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He once got pulled over for speeding, and the cop got the ticket?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;surveys&quot; SET &quot;result_id&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;surveys&quot;.&quot;id&quot; = ?[0m  [[&quot;result_id&quot;, 1], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.159903&quot;], [&quot;id&quot;, 4]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT &quot;answers&quot;.* FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 4]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 21]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 24]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 28]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 31]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 34]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 35]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 38]]
+[1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 43]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 47]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 49]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 62]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 65]]
+[1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 73]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 76]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 88]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 92]]
+[1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;id&quot; = ?[0m  [[&quot;id&quot;, 100]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;result_id&quot; IS NULL[0m  [[&quot;is_active&quot;, &quot;f&quot;]]
+[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>SurveysControllerTest: test_should_show_survey</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;aee56be23cbbcd71768a42420022bc103247afe0bf30e5adb5e36f38b1ecc193de3a1371b05cc23f8a24a9afbfc57c4738c2429665536f80e4751c08fc7d655d&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;bkBV6q8ZntgII2KCOhXU&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;BOGlWATycg6wIqiQ7U&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$ZoUM8jPhH2/PuCK4nmbyS.58lNGRy18xemK6oAHhV7TV87DsdAjDy&quot;], [&quot;persistence_token&quot;, &quot;aee56be23cbbcd71768a42420022bc103247afe0bf30e5adb5e36f38b1ecc193de3a1371b05cc23f8a24a9afbfc57c4738c2429665536f80e4751c08fc7d655d&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;bkBV6q8ZntgII2KCOhXU&quot;], [&quot;perishable_token&quot;, &quot;r6YdZpx6WhIh1dhZsybV&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.221207&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;The Nobel Academy was awarded a prize from HIM?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;The Nobel Academy was awarded a prize from HIM?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.223338&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.223338&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:20 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;dolly.veum@cormier.name&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;dolly.veum@cormier.name&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;b6f48e100ba09e0869ba58aaf407db9250e65be442c68dcc1c0be1f53c5b93c883167c77c96b6da867a2fc0f463cd73e9a1adfeed2ccd6b5efa587b123257f84&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;Nza0HxYBNO546oUYWwSs&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;dolly.veum@cormier.name&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$0Nf036ZBPkuiHMFd2Uzu5eNU0vAk9neAq3aZVwSHYaH7jrsSRAyJ2&quot;], [&quot;password_salt&quot;, &quot;hPwNXLDe9ZLqTtQL80Up&quot;], [&quot;persistence_token&quot;, &quot;b6f48e100ba09e0869ba58aaf407db9250e65be442c68dcc1c0be1f53c5b93c883167c77c96b6da867a2fc0f463cd73e9a1adfeed2ccd6b5efa587b123257f84&quot;], [&quot;single_access_token&quot;, &quot;Nza0HxYBNO546oUYWwSs&quot;], [&quot;perishable_token&quot;, &quot;AKsDs74HOcmEhW4VwH&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:20.279295&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:20.279234&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:20.279497&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.279497&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started GET “/surveys/1” for 127.0.0.1 at 2017-08-27 23:21:20 -0700
+Processing by <a
+href="../SurveysController.html#method-i-show">SurveysController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;b6f48e100ba09e0869ba58aaf407db9250e65be442c68dcc1c0be1f53c5b93c883167c77c96b6da867a2fc0f463cd73e9a1adfeed2ccd6b5efa587b123257f84&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;kI8asAKzZKhuzV4PJDch&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:20.286729&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:20.287055&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[36mSurvey Load (0.1ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+Rendering surveys/show.html.erb within layouts/application
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 1]]
+Rendered surveys/show.html.erb within layouts/application (7.2ms)</pre>
+
+<p>Completed 200 OK in 8688ms (Views: 8683.9ms | ActiveRecord: 0.6ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>SurveysControllerTest: test_should_create_survey</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;ce05a61d7b85421e7ac88b92cf2d972da4a77b2e0ee39f5e3963eba0350d7456052b1e37d0a05f882f1bce874ca9bf4af832f0662b27d9d57bd6f58bf95b5cbe&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;5hNHwSVyWgOVX4s1Klmd&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;wlSZAb3yH2UskbbUq8m&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$ZdbisaALBDxH5dyYn024f.Cq6ATbnlKkf8IY2qGcWdDLojc7sOD8a&quot;], [&quot;persistence_token&quot;, &quot;ce05a61d7b85421e7ac88b92cf2d972da4a77b2e0ee39f5e3963eba0350d7456052b1e37d0a05f882f1bce874ca9bf4af832f0662b27d9d57bd6f58bf95b5cbe&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;5hNHwSVyWgOVX4s1Klmd&quot;], [&quot;perishable_token&quot;, &quot;rJlJB4gCGUC4Iy5nnMp&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.027690&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;His business card simply says ‘I’ll Call You”?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;His business card simply says ‘I’ll Call You”?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.030069&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.030069&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;damian@vonrueden.io&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;damian@vonrueden.io&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;0eb38c33e7659059b90089ffcb4d3106682d6bb51e6fcf0d3a2142cae702a1bfd6ff468774fb80ff8c2a5da2fdd789f27d32c2c608a55b54a9c55351e221096f&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;bqgGUHlmCAcRl1uSAPOl&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;damian@vonrueden.io&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$xpUED72EkO7mrtMNTM7DyutHSr8LU1zFfyyp2avFJBOGl6om/RLFS&quot;], [&quot;password_salt&quot;, &quot;YzXgXxKwytj2oqYBesD&quot;], [&quot;persistence_token&quot;, &quot;0eb38c33e7659059b90089ffcb4d3106682d6bb51e6fcf0d3a2142cae702a1bfd6ff468774fb80ff8c2a5da2fdd789f27d32c2c608a55b54a9c55351e221096f&quot;], [&quot;single_access_token&quot;, &quot;bqgGUHlmCAcRl1uSAPOl&quot;], [&quot;perishable_token&quot;, &quot;ELQOjxkpMsSI5y3DDI&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.086200&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.086150&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.086377&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.086377&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;surveys&quot;[0m</pre>
+
+<p>Started POST “/surveys” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../SurveysController.html#method-i-create">SurveysController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;survey&quot;=&gt;{&quot;question&quot;=&gt;&quot;His lovemaking has been detected by a seismograph?&quot;, &quot;surveyor&quot;=&gt;&quot;#&lt;User:0x0056432e85db68&gt;&quot;}}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;0eb38c33e7659059b90089ffcb4d3106682d6bb51e6fcf0d3a2142cae702a1bfd6ff468774fb80ff8c2a5da2fdd789f27d32c2c608a55b54a9c55351e221096f&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;xf0rv8IEML4zPoD90c&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.090872&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.091202&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Unpermitted parameter: :surveyor</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;His lovemaking has been detected by a seismograph?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190963], [&quot;question&quot;, &quot;His lovemaking has been detected by a seismograph?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.092818&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.092818&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys/2">www.example.com/surveys/2</a>
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;surveys&quot;[0m
+[1m[36mSurvey Load (0.1ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; ORDER BY &quot;surveys&quot;.&quot;id&quot; DESC LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>SurveysControllerTest: test_should_update_survey</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;13a32a68f6e451b3be21a92c9a42b4cb1285523cba3c10dc3068ef114adbcbe2c82b7cab52408756367ecc42e21574f6cf3ec1f6b097c7cf2a0c0e8f144b2813&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;NckER0U7ZTY1kWS6BT9&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;DIMQPw3ruN0Fc7xtitdj&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$zWumPA3TYKu6hltD/2q61.daU0w7Bmw1iWqreckSSWYv9Gzt2LJ2u&quot;], [&quot;persistence_token&quot;, &quot;13a32a68f6e451b3be21a92c9a42b4cb1285523cba3c10dc3068ef114adbcbe2c82b7cab52408756367ecc42e21574f6cf3ec1f6b097c7cf2a0c0e8f144b2813&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;NckER0U7ZTY1kWS6BT9&quot;], [&quot;perishable_token&quot;, &quot;atdI53gBNDXjOJn82sBb&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.148453&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;If opportunity knocks, and he’s not at home, opportunity waits?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;If opportunity knocks, and he’s not at home, opportunity waits?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.150767&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.150767&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;anjali_anderson@volkman.io&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;anjali_anderson@volkman.io&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;013c8e4f5f5edf362d15e5cc9960e1ac9dc6118c67f52aa05ce2ba6dd9ca127b1097c4027ccec0caa32be8462d7f8a9c85ae806f2bdc5938d767bb5595c3b4d4&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;adFqniOZiEm4iILSEcuR&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;anjali_anderson@volkman.io&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$t2BYKdglbgw9VHco5BTa5OyWfh06XwsQFDxGpJix4LgJ5/eSzNv0y&quot;], [&quot;password_salt&quot;, &quot;iO2dODza6K2cKbN7Mfsb&quot;], [&quot;persistence_token&quot;, &quot;013c8e4f5f5edf362d15e5cc9960e1ac9dc6118c67f52aa05ce2ba6dd9ca127b1097c4027ccec0caa32be8462d7f8a9c85ae806f2bdc5938d767bb5595c3b4d4&quot;], [&quot;single_access_token&quot;, &quot;adFqniOZiEm4iILSEcuR&quot;], [&quot;perishable_token&quot;, &quot;xchLtu5nRVH7cTCIeUC&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.207362&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.207306&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.207574&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.207574&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 56ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started PATCH “/surveys/1” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../SurveysController.html#method-i-update">SurveysController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;survey&quot;=&gt;{&quot;is_active&quot;=&gt;&quot;false&quot;}, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;013c8e4f5f5edf362d15e5cc9960e1ac9dc6118c67f52aa05ce2ba6dd9ca127b1097c4027ccec0caa32be8462d7f8a9c85ae806f2bdc5938d767bb5595c3b4d4&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;LNEGvV6pvGcQIQM6efS&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.212920&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.213301&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[36mSurvey Load (0.0ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;If opportunity knocks, and he’s not at home, opportunity waits?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;question&quot; = ? AND (&quot;surveys&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;question&quot;, &quot;If opportunity knocks, and he’s not at home, opportunity waits?&quot;], [&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;surveys&quot; SET &quot;is_active&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;surveys&quot;.&quot;id&quot; = ?[0m  [[&quot;is_active&quot;, &quot;f&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.216162&quot;], [&quot;id&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys/1">www.example.com/surveys/1</a>
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)</p>
+
+<pre>[1m[36mSurvey Load (0.0ms)[0m  [1m[34mSELECT  &quot;surveys&quot;.* FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>SurveysControllerTest: test_should_get_index</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;5a34accec8ab4ec248060d993f8d73c29d39f6cd038778ca0e00e7fad432057085998606d4bddc31e1af6ffd9991a20605c1af35f61e102811ce66c9b41ae548&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;TXXNd4Fe4V700FNjYDCB&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;0NMPNQLpoRIAoOhbOCBn&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$SpyUUlAtEr5Qf2yZ6qot/uh.6DWJ0pnDfPrnfnVndz/oJEpsaj2dW&quot;], [&quot;persistence_token&quot;, &quot;5a34accec8ab4ec248060d993f8d73c29d39f6cd038778ca0e00e7fad432057085998606d4bddc31e1af6ffd9991a20605c1af35f61e102811ce66c9b41ae548&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;TXXNd4Fe4V700FNjYDCB&quot;], [&quot;perishable_token&quot;, &quot;1pR2A2wNMKc6P4noEz&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.272386&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;He once made a weeping willow laugh?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;He once made a weeping willow laugh?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.274520&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.274520&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;houston.schamberger@bednar.biz&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;houston.schamberger@bednar.biz&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;db906f3f59d80434b14d024979256df92bac832da55e6c17a746a78b82c87b07b36914b6fd6a17c5a783adff2bea089c98aad9276e6b7ba05e5bbf5fccce2175&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;VJUwjYwNhmf8AIo0UFi&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;houston.schamberger@bednar.biz&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$6u2FGHzx7H9T4V8soK4rr.6j7JedDptL8d4TYwXyd/U4Rabwwqk2u&quot;], [&quot;password_salt&quot;, &quot;QAybawf3MXux4CcQcT6R&quot;], [&quot;persistence_token&quot;, &quot;db906f3f59d80434b14d024979256df92bac832da55e6c17a746a78b82c87b07b36914b6fd6a17c5a783adff2bea089c98aad9276e6b7ba05e5bbf5fccce2175&quot;], [&quot;single_access_token&quot;, &quot;VJUwjYwNhmf8AIo0UFi&quot;], [&quot;perishable_token&quot;, &quot;y470TPGLznwagV5rrFXh&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.331366&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.331314&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.331536&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.331536&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 56ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started GET “/surveys” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../SurveysController.html#method-i-index">SurveysController#index</a>
+as HTML</p>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;db906f3f59d80434b14d024979256df92bac832da55e6c17a746a78b82c87b07b36914b6fd6a17c5a783adff2bea089c98aad9276e6b7ba05e5bbf5fccce2175&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;ir0JY932Ot2n87ZfSrU&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.335993&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.336337&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Rendering surveys/index.html.erb within layouts/application
+Rendered surveys/index.html.erb within layouts/application (1.1ms)</pre>
+
+<p>Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.5ms) Started GET
+“/surveys.json” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing by <a
+href="../SurveysController.html#method-i-index">SurveysController#index</a>
+as JSON</p>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190963], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;31qnkUm2axrDbDsOyBBe&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.342904&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.343243&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Unpermitted parameter: :format Unpermitted parameter: :format Unpermitted
+parameter: :format Unpermitted parameter: :format Unpermitted parameter:
+:format Unpermitted parameter: :format</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;surveys&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT &quot;surveys&quot;.&quot;id&quot;) FROM &quot;surveys&quot; LEFT OUTER JOIN &quot;users&quot; ON &quot;users&quot;.&quot;id&quot; = &quot;surveys&quot;.&quot;surveyor_id&quot;[0m
+Rendering surveys/index.json.jbuilder
+[1m[35mSQL (0.1ms)[0m  [1m[34mSELECT &quot;surveys&quot;.&quot;id&quot; AS t0_r0, &quot;surveys&quot;.&quot;is_active&quot; AS t0_r1, &quot;surveys&quot;.&quot;result_id&quot; AS t0_r2, &quot;surveys&quot;.&quot;surveyor_id&quot; AS t0_r3, &quot;surveys&quot;.&quot;question&quot; AS t0_r4, &quot;surveys&quot;.&quot;created_at&quot; AS t0_r5, &quot;surveys&quot;.&quot;updated_at&quot; AS t0_r6, &quot;users&quot;.&quot;id&quot; AS t1_r0, &quot;users&quot;.&quot;email&quot; AS t1_r1, &quot;users&quot;.&quot;crypted_password&quot; AS t1_r2, &quot;users&quot;.&quot;password_salt&quot; AS t1_r3, &quot;users&quot;.&quot;persistence_token&quot; AS t1_r4, &quot;users&quot;.&quot;single_access_token&quot; AS t1_r5, &quot;users&quot;.&quot;perishable_token&quot; AS t1_r6, &quot;users&quot;.&quot;login_count&quot; AS t1_r7, &quot;users&quot;.&quot;failed_login_count&quot; AS t1_r8, &quot;users&quot;.&quot;last_request_at&quot; AS t1_r9, &quot;users&quot;.&quot;current_login_at&quot; AS t1_r10, &quot;users&quot;.&quot;last_login_at&quot; AS t1_r11, &quot;users&quot;.&quot;current_login_ip&quot; AS t1_r12, &quot;users&quot;.&quot;last_login_ip&quot; AS t1_r13, &quot;users&quot;.&quot;active&quot; AS t1_r14, &quot;users&quot;.&quot;approved&quot; AS t1_r15, &quot;users&quot;.&quot;confirmed&quot; AS t1_r16, &quot;users&quot;.&quot;first_name&quot; AS t1_r17, &quot;users&quot;.&quot;last_name&quot; AS t1_r18, &quot;users&quot;.&quot;age&quot; AS t1_r19, &quot;users&quot;.&quot;created_at&quot; AS t1_r20, &quot;users&quot;.&quot;updated_at&quot; AS t1_r21 FROM &quot;surveys&quot; LEFT OUTER JOIN &quot;users&quot; ON &quot;users&quot;.&quot;id&quot; = &quot;surveys&quot;.&quot;surveyor_id&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;answers&quot; WHERE &quot;answers&quot;.&quot;survey_id&quot; = ?[0m  [[&quot;survey_id&quot;, 1]]
+Rendered surveys/_survey.json.jbuilder (1.7ms)
+Rendered surveys/index.json.jbuilder (3.2ms)</pre>
+
+<p>Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 0.8ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>SurveysControllerTest: test_should_get_new</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;a17cf0ed0fc4dbbc8c47277ed21dab0f0e1ad2c5cce185244f774e3c3b5abad93cb9772a5c7536b1fc5552dd90331913a0cb3ababa9df00e7746f17779e7e916&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;l6FpQvkKLGixhxS481e&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;oANNjPxMMhuiP7ZO1cO6&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$IjVpugB2fNHta/B7LEcfx.SQeBudk9OdmZxcQKRWGps9as0XxQzJ2&quot;], [&quot;persistence_token&quot;, &quot;a17cf0ed0fc4dbbc8c47277ed21dab0f0e1ad2c5cce185244f774e3c3b5abad93cb9772a5c7536b1fc5552dd90331913a0cb3ababa9df00e7746f17779e7e916&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;l6FpQvkKLGixhxS481e&quot;], [&quot;perishable_token&quot;, &quot;HyDjGb98dxR1uIYB8jX&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.403981&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mSurvey Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;surveys&quot; WHERE &quot;surveys&quot;.&quot;is_active&quot; = ? AND &quot;surveys&quot;.&quot;question&quot; = ? LIMIT ?[0m  [[&quot;is_active&quot;, &quot;t&quot;], [&quot;question&quot;, &quot;The Nobel Academy was awarded a prize from HIM?&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;surveys&quot; (&quot;surveyor_id&quot;, &quot;question&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;surveyor_id&quot;, 980190962], [&quot;question&quot;, &quot;The Nobel Academy was awarded a prize from HIM?&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.406240&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.406240&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;malinda_heller@prosacco.name&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;malinda_heller@prosacco.name&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;0c79039c7a7f811e87127fd1ab136f552e9503694010820e09bfd659c5d7d04715e8f6b9381344b7a8848698b399235ac9b0a5467e6970651dc578648be28c37&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;f4mFUQlfnNSWRmEjchP&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;malinda_heller@prosacco.name&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$io776QzOulo4JuJXahEEaOZQdtZxxozbPTlGk8zuItBh.DwJJXXwC&quot;], [&quot;password_salt&quot;, &quot;co9BrU8FHIUpVDpm3YS5&quot;], [&quot;persistence_token&quot;, &quot;0c79039c7a7f811e87127fd1ab136f552e9503694010820e09bfd659c5d7d04715e8f6b9381344b7a8848698b399235ac9b0a5467e6970651dc578648be28c37&quot;], [&quot;single_access_token&quot;, &quot;f4mFUQlfnNSWRmEjchP&quot;], [&quot;perishable_token&quot;, &quot;c26VxAkhM59ZNDFn0cm&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.462504&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.462448&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.462672&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.462672&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started GET “/surveys/new” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../SurveysController.html#method-i-new">SurveysController#new</a> as
+HTML</p>
+
+<pre>[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;0c79039c7a7f811e87127fd1ab136f552e9503694010820e09bfd659c5d7d04715e8f6b9381344b7a8848698b399235ac9b0a5467e6970651dc578648be28c37&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;v5qEir3LPhtIvIOdwKti&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.467048&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.467351&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Rendering surveys/new.html.erb within layouts/application
+Rendered surveys/new.html.erb within layouts/application (1.1ms)</pre>
+
+<p>Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>UsersControllerTest: test_should_create_user</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;3b74db8a43e1ecb3c38ff00d797cfb068d72a0c95de6f059c95c313fd6c0b52dbb2198e647dffbc223fa019053a123cb32a7635820195b6863b233cc51e585f3&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;FjIo81wVsfUBwiefQ&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;xTgURnh86kAvyay0n33i&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$qRtYcFljA.kbtJA57iGE2.JqqbiRKXUtQFFQot5I.ERfwn6.lRTHW&quot;], [&quot;persistence_token&quot;, &quot;3b74db8a43e1ecb3c38ff00d797cfb068d72a0c95de6f059c95c313fd6c0b52dbb2198e647dffbc223fa019053a123cb32a7635820195b6863b233cc51e585f3&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;FjIo81wVsfUBwiefQ&quot;], [&quot;perishable_token&quot;, &quot;AaChgmv3Q1CzAJ0U9jZQ&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.525667&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;jean.maggio@maggio.net&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;jean.maggio@maggio.net&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;83001c5b5969534fefe66ebcdd8bb0817291d51eae4bd24e42f9bdee9a4568f0595a3876d6ca426b31cc77411f329e1a8be40fac327f90463620f9f97f23455a&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;pP8Pr03OEyRPoiroMi&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;jean.maggio@maggio.net&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$j1UOotceqchDlbH6gh0/3OKm4qZW6DO5n3HcTvSUsRv3HM1YBZc26&quot;], [&quot;password_salt&quot;, &quot;BGkcUPzUCFHCPoL3QDW&quot;], [&quot;persistence_token&quot;, &quot;83001c5b5969534fefe66ebcdd8bb0817291d51eae4bd24e42f9bdee9a4568f0595a3876d6ca426b31cc77411f329e1a8be40fac327f90463620f9f97f23455a&quot;], [&quot;single_access_token&quot;, &quot;pP8Pr03OEyRPoiroMi&quot;], [&quot;perishable_token&quot;, &quot;oM5Z1ZsiYPAqDoHSdxk&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.582281&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.582229&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.582513&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.582513&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.6ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>UsersControllerTest: test_should_get_new_user</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;b360f70f3dda6cc94f414db92f461c41d637ea33c1d9ad60b2f5ceae3b5f520f97c2f0e90024d23b90586afca85fbde22d63bdc941f4cf6f91bb93dd39e52268&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;efcV9RbVKbtly5naWJHQ&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;8wS5OS8a2ZW3XTpY6xq&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$U7Bd1rJhididXtosBJYJWuNvZOufaT1bJO8WvXT/Ns1xBcqpsyxGu&quot;], [&quot;persistence_token&quot;, &quot;b360f70f3dda6cc94f414db92f461c41d637ea33c1d9ad60b2f5ceae3b5f520f97c2f0e90024d23b90586afca85fbde22d63bdc941f4cf6f91bb93dd39e52268&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;efcV9RbVKbtly5naWJHQ&quot;], [&quot;perishable_token&quot;, &quot;DEqXre1gpKuZlVLYjzlD&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.641385&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Started GET “/users/new” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../UsersController.html#method-i-new">UsersController#new</a> as HTML</p>
+
+<pre>Rendering users/new.html.erb within layouts/application
+Rendered users/_form.erb (1.6ms)
+Rendered users/new.html.erb within layouts/application (3.8ms)</pre>
+
+<p>Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>UsersControllerTest: test_should_edit_user</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;ca8793f3586d7a6dab20c0ec9bf07ea8ba6b65f33d3e7efc3c923a09eff3ab083ba6757fa1acde55090f23c26c2102f68ec2b7bee14c69e4238a5e5717a9189f&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;aTMEVbWvnVvmy5JQBRAR&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;0G2BmHoG40tyFw1vc4vm&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$qMMBe8PGMNytlLDSlFWmW.6WrTfiE0QqBXFzMd.WxDoRHkeiGq5ia&quot;], [&quot;persistence_token&quot;, &quot;ca8793f3586d7a6dab20c0ec9bf07ea8ba6b65f33d3e7efc3c923a09eff3ab083ba6757fa1acde55090f23c26c2102f68ec2b7bee14c69e4238a5e5717a9189f&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;aTMEVbWvnVvmy5JQBRAR&quot;], [&quot;perishable_token&quot;, &quot;5QphVxQ3grUMVSOsn3a&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.707102&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Started GET “/users/980190962” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../UsersController.html#method-i-show">UsersController#show</a> as
+HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;980190962&quot;}</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/user_sessions/new">www.example.com/user_sessions/new</a>
+Filter chain halted as :require_user rendered or redirected Completed 302
+Found in 1ms (ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;nestor_botsford@considinefeest.biz&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;nestor_botsford@considinefeest.biz&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;f5e036214f461398eecea9c076f71ad53a42151e658b1e6efe2ec2d2654935b7c77abb46fe8bc92799516e7072991837215cfd45deb7eaa6fda6505b3b28d518&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;Uinyl5IBHtt3zZibp9Fj&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;nestor_botsford@considinefeest.biz&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$2TcdqSAB5ZI/BnnKJfgBEuzYduwHp7sz8.cUfHjIwTz84NrHpEwFa&quot;], [&quot;password_salt&quot;, &quot;0nq3tx0HLOggBTNCqIx&quot;], [&quot;persistence_token&quot;, &quot;f5e036214f461398eecea9c076f71ad53a42151e658b1e6efe2ec2d2654935b7c77abb46fe8bc92799516e7072991837215cfd45deb7eaa6fda6505b3b28d518&quot;], [&quot;single_access_token&quot;, &quot;Uinyl5IBHtt3zZibp9Fj&quot;], [&quot;perishable_token&quot;, &quot;Hkw88McBWf1GPBssL4H9&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.767585&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.767532&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.767746&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.767746&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started GET “/users/980190962/edit” for 127.0.0.1 at 2017-08-27 23:21:29
+-0700 Processing by <a
+href="../UsersController.html#method-i-edit">UsersController#edit</a> as
+HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;980190962&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;f5e036214f461398eecea9c076f71ad53a42151e658b1e6efe2ec2d2654935b7c77abb46fe8bc92799516e7072991837215cfd45deb7eaa6fda6505b3b28d518&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;9qt9SIaHogAtDvS5Ww&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.772075&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.772625&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Rendering users/edit.html.erb within layouts/application
+Rendered users/_form.erb (0.7ms)
+Rendered users/edit.html.erb within layouts/application (2.2ms)</pre>
+
+<p>Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.6ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>UsersControllerTest: test_should_show_user</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;089093a42a91806fa378c0335138bdad4cc93abdd916c327146788faefb38fcd44fbc3adc1cec17638a02650cab706ea28a856f3ba62718b75e2969d604d8195&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;TGhBQsFg0h1iruaVVR3W&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;48TLAnd9O2Cx9aAjvYk&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$neOhuHmMhbAtB9DjbMcYyuskQFWH48Vw8gCvG0Vw3kR2gV5k655Ta&quot;], [&quot;persistence_token&quot;, &quot;089093a42a91806fa378c0335138bdad4cc93abdd916c327146788faefb38fcd44fbc3adc1cec17638a02650cab706ea28a856f3ba62718b75e2969d604d8195&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;TGhBQsFg0h1iruaVVR3W&quot;], [&quot;perishable_token&quot;, &quot;PH0pw8BTZBA4bU0y2dav&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.833090&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Started GET “/users/980190962” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../UsersController.html#method-i-show">UsersController#show</a> as
+HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;980190962&quot;}</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/user_sessions/new">www.example.com/user_sessions/new</a>
+Filter chain halted as :require_user rendered or redirected Completed 302
+Found in 1ms (ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;emmy@bashirian.com&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;emmy@bashirian.com&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;fbff88c089deca31326af5f221c88c450bb1c36f4ec0729fed3b1c2f16e1a9ed42b276734ea01cf9e0992bc354bbb920f92bd0636ea66273278d642abd244e5e&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;W3MrKo8SauCMp5CNlRy&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;emmy@bashirian.com&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$W6a28DwfA6tnOsQ1pqTgbu9Ra6EeIww4K8KTDkTJz4LhGaG.Gq/yK&quot;], [&quot;password_salt&quot;, &quot;y72rxPmp1vLLgRDGjDH&quot;], [&quot;persistence_token&quot;, &quot;fbff88c089deca31326af5f221c88c450bb1c36f4ec0729fed3b1c2f16e1a9ed42b276734ea01cf9e0992bc354bbb920f92bd0636ea66273278d642abd244e5e&quot;], [&quot;single_access_token&quot;, &quot;W3MrKo8SauCMp5CNlRy&quot;], [&quot;perishable_token&quot;, &quot;T02iVWXegfzfVS7NspX&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.891575&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:29.891477&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:29.891725&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.891725&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.6ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started GET “/users/980190962” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../UsersController.html#method-i-show">UsersController#show</a> as
+HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;980190962&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;fbff88c089deca31326af5f221c88c450bb1c36f4ec0729fed3b1c2f16e1a9ed42b276734ea01cf9e0992bc354bbb920f92bd0636ea66273278d642abd244e5e&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;gskoxNvn4PwWo6d29wL&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:29.896152&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.896474&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Rendering users/show.html.erb within layouts/application
+Rendered users/show.html.erb within layouts/application (2.5ms)</pre>
+
+<p>Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m</pre>
+<hr>
+
+<p>UsersControllerTest: test_should_update_user</p>
+<hr>
+
+<pre>[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = ? LIMIT ?[0m  [[&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;f0059a7f28647a539c9a4fca0ea6523dfa6fb29da7613baa3d45ded8caf15aaaceb2e95f59766e9603f384eb2beaf1a041d96fcbbd7f196365bc20d722d1d6c7&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? AND (&quot;users&quot;.&quot;id&quot; != ?) LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;kqAbkxvrGqYUKySKHyfV&quot;], [&quot;id&quot;, 980190962], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;password_salt&quot; = ?, &quot;crypted_password&quot; = ?, &quot;persistence_token&quot; = ?, &quot;active&quot; = ?, &quot;approved&quot; = ?, &quot;confirmed&quot; = ?, &quot;single_access_token&quot; = ?, &quot;perishable_token&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;password_salt&quot;, &quot;jQjUZPVAJnaL7bzrlE&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$YhDkfBACUVmgDbc7ThgZUuz4Ib.vIiYdSnJnknEgl9ItjmA6OrNRO&quot;], [&quot;persistence_token&quot;, &quot;f0059a7f28647a539c9a4fca0ea6523dfa6fb29da7613baa3d45ded8caf15aaaceb2e95f59766e9603f384eb2beaf1a041d96fcbbd7f196365bc20d722d1d6c7&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;single_access_token&quot;, &quot;kqAbkxvrGqYUKySKHyfV&quot;], [&quot;perishable_token&quot;, &quot;Uwrjvj2AX5Bk2P1Uhq0&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:29.956458&quot;], [&quot;id&quot;, 980190962]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Started GET “/users/980190962” for 127.0.0.1 at 2017-08-27 23:21:29 -0700
+Processing by <a
+href="../UsersController.html#method-i-show">UsersController#show</a> as
+HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;980190962&quot;}</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/user_sessions/new">www.example.com/user_sessions/new</a>
+Filter chain halted as :require_user rendered or redirected Completed 302
+Found in 1ms (ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started POST “/users” for 127.0.0.1 at 2017-08-27 23:21:29 -0700 Processing
+by <a
+href="../UsersController.html#method-i-create">UsersController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;devante@johns.io&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE LOWER(&quot;users&quot;.&quot;email&quot;) = LOWER(?) LIMIT ?[0m  [[&quot;email&quot;, &quot;devante@johns.io&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;fb6028e6561751985bb8019af227171f73e06f983a304dc9d4d78c750a66775000627fd1b01bda11de58dee2df135ce0c848417e90f806181f0de7935f3f0546&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;single_access_token&quot; = ? LIMIT ?[0m  [[&quot;single_access_token&quot;, &quot;8UtyqJJhGjDnSOXyA5t&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;crypted_password&quot;, &quot;password_salt&quot;, &quot;persistence_token&quot;, &quot;single_access_token&quot;, &quot;perishable_token&quot;, &quot;login_count&quot;, &quot;last_request_at&quot;, &quot;current_login_at&quot;, &quot;current_login_ip&quot;, &quot;active&quot;, &quot;approved&quot;, &quot;confirmed&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;email&quot;, &quot;devante@johns.io&quot;], [&quot;crypted_password&quot;, &quot;$2a$10$dqY3zTBh6vKeJHOkiolfA.zLo5gcH6pQNaaoC3pAcDOQtcTAtnIWu&quot;], [&quot;password_salt&quot;, &quot;l1XUXEGidaNKFSXAaiyM&quot;], [&quot;persistence_token&quot;, &quot;fb6028e6561751985bb8019af227171f73e06f983a304dc9d4d78c750a66775000627fd1b01bda11de58dee2df135ce0c848417e90f806181f0de7935f3f0546&quot;], [&quot;single_access_token&quot;, &quot;8UtyqJJhGjDnSOXyA5t&quot;], [&quot;perishable_token&quot;, &quot;zDQW3u4pxBqt61NPVJM4&quot;], [&quot;login_count&quot;, 1], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:30.014960&quot;], [&quot;current_login_at&quot;, &quot;2017-08-28 06:21:30.014908&quot;], [&quot;current_login_ip&quot;, &quot;127.0.0.1&quot;], [&quot;active&quot;, &quot;t&quot;], [&quot;approved&quot;, &quot;t&quot;], [&quot;confirmed&quot;, &quot;t&quot;], [&quot;created_at&quot;, &quot;2017-08-28 06:21:30.015131&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:30.015131&quot;]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 55ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM &quot;users&quot;[0m</pre>
+
+<p>Started PATCH “/users/980190962” for 127.0.0.1 at 2017-08-27 23:21:30 -0700
+Processing by <a
+href="../UsersController.html#method-i-update">UsersController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;user&quot;=&gt;{&quot;age&quot;=&gt;&quot;36&quot;}, &quot;id&quot;=&gt;&quot;980190962&quot;}
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; IS NULL LIMIT ?[0m  [[&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;persistence_token&quot; = ? LIMIT ?[0m  [[&quot;persistence_token&quot;, &quot;fb6028e6561751985bb8019af227171f73e06f983a304dc9d4d78c750a66775000627fd1b01bda11de58dee2df135ce0c848417e90f806181f0de7935f3f0546&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;last_request_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;qccB4ZfNheFZ1YzVT8&quot;], [&quot;last_request_at&quot;, &quot;2017-08-28 06:21:30.019762&quot;], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:30.020066&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE &quot;users&quot; SET &quot;perishable_token&quot; = ?, &quot;age&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;users&quot;.&quot;id&quot; = ?[0m  [[&quot;perishable_token&quot;, &quot;YeiFrx4QsruPc8kpghPQ&quot;], [&quot;age&quot;, 36], [&quot;updated_at&quot;, &quot;2017-08-28 06:21:30.021372&quot;], [&quot;id&quot;, 980190963]]
+[1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Redirected to <a
+href="http://www.example.com/surveys">www.example.com/surveys</a> Completed
+302 Found in 4ms (ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

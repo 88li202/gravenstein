@@ -1,0 +1,15 @@
+<%# +SPEC+: <em>The home screen of our app should show a list of surveys and a button to create a new one.</em> %>
+<%# +SPEC+: <em>You should display the results of the survey on the home screen with the percentage of yes and no responses.</em> %>
+
+<%= simple_alert_tag(notice, 'info') %>
+
+<%= h1_tag(class: %w(display-3)){ Survey.name.pluralize } %>
+
+<%= div_row_tag(class: %w(justify-content-center w-100)) do %>
+  <%= div_col_xs_2_tag(){ link_to(t('survey.new_survey'), new_survey_path, class: %w(btn btn-primary btn-block)) } %>
+<% end %>
+
+<%#= Table/report canvas with columns for DataTable (https://datatables.net) %>
+<%= datatable_table(Survey) %>
+
+<%= br_tag %>

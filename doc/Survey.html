@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Survey - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationRecord.html">ApplicationRecord</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="SurveyReport.html">SurveyReport</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-denormalize_all">::denormalize_all</a>
+    
+    <li ><a href="#method-c-get_surveys_report">::get_surveys_report</a>
+    
+    <li ><a href="#method-i-answers_by_age_groups">#answers_by_age_groups</a>
+    
+    <li ><a href="#method-i-answers_count">#answers_count</a>
+    
+    <li ><a href="#method-i-close">#close</a>
+    
+    <li ><a href="#method-i-denormalize">#denormalize</a>
+    
+    <li ><a href="#method-i-percentage_no">#percentage_no</a>
+    
+    <li ><a href="#method-i-percentage_yes">#percentage_yes</a>
+    
+    <li ><a href="#method-i-status">#status</a>
+    
+    <li ><a href="#method-i-surveyor_age">#surveyor_age</a>
+    
+    <li ><a href="#method-i-surveyor_name">#surveyor_name</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Survey">
+  <h1 id="class-Survey" class="class">
+    class Survey
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-denormalize_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">denormalize_all</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To denormalize all closed surveys not yet denormalized</strong>
+used by the denormalize rake task cf. <code>denormalize</code></p>
+          
+          
+
+          
+          <div class="method-source-code" id="denormalize_all-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">denormalize_all</span>
+  <span class="ruby-constant">Survey</span>.<span class="ruby-identifier">pending_denormalization</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:denormalize</span>).<span class="ruby-identifier">all?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-get_surveys_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_surveys_report</span><span
+            class="method-args">(draw, search, start, length, order_by, order_dir)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To get the surveys</strong> the returned surveys are paginated,
+ordered and possibly filtered by a search criteria. With parameters:</p>
+<ul><li>
+<p>the <code>draw</code> counter</p>
+</li><li>
+<p>the <code>search</code> criteria</p>
+</li><li>
+<p>the <code>start</code> point</p>
+</li><li>
+<p>the <code>length</code></p>
+</li><li>
+<p>the <code>order_by</code> column</p>
+</li><li>
+<p>the <code>order_dir</code> direction</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="get_surveys_report-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_surveys_report</span>(<span class="ruby-identifier">draw</span>, <span class="ruby-identifier">search</span>, <span class="ruby-identifier">start</span>, <span class="ruby-identifier">length</span>, <span class="ruby-identifier">order_by</span>, <span class="ruby-identifier">order_dir</span>)
+
+  <span class="ruby-comment"># We are eager loading the surveyors (we need their name,... for filtering &amp; displaying purpose).</span>
+  <span class="ruby-identifier">surveys_rel</span> = <span class="ruby-constant">Survey</span>.<span class="ruby-identifier">eager_load</span>(<span class="ruby-value">:surveyor</span>)
+
+  <span class="ruby-comment"># Searching/Filtering by</span>
+  <span class="ruby-comment"># - surveyor +first_name+</span>
+  <span class="ruby-comment"># - surveyor +last_name+</span>
+  <span class="ruby-comment"># - +question+ of the survey</span>
+  <span class="ruby-identifier">surveys_rel</span>.<span class="ruby-identifier">where!</span>(<span class="ruby-string">&quot;(users.first_name LIKE ? OR users.last_name LIKE ? OR question LIKE ?)&quot;</span>, <span class="ruby-node">&quot;%#{search}%&quot;</span>, <span class="ruby-node">&quot;%#{search}%&quot;</span>, <span class="ruby-node">&quot;%#{search}%&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>.<span class="ruby-identifier">present?</span>
+
+  <span class="ruby-comment"># Ordering (using the +COLUMNS_SORT+ ordering map)</span>
+  <span class="ruby-identifier">surveys_rel</span>.<span class="ruby-identifier">order!</span>(<span class="ruby-node">&quot;#{Survey::COLUMNS_SORT[order_by.to_i]} #{order_dir}&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Survey</span><span class="ruby-operator">::</span><span class="ruby-constant">COLUMNS_SORT</span>[<span class="ruby-identifier">order_by</span>.<span class="ruby-identifier">to_i</span>].<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">%w(asc desc)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">order_dir</span>)
+
+  <span class="ruby-comment"># The result is an array composed of:</span>
+  <span class="ruby-comment"># - the +draw+ count</span>
+  <span class="ruby-comment"># - the total number of surveys (without filtering or paging)</span>
+  <span class="ruby-comment"># - the total number of surveys filtered with the search criteria</span>
+  <span class="ruby-comment"># - the surveys (after filtering, sorting and paginating)</span>
+  [
+    <span class="ruby-identifier">draw</span>,
+    <span class="ruby-constant">Survey</span>.<span class="ruby-identifier">count</span>,
+    <span class="ruby-identifier">surveys_rel</span>.<span class="ruby-identifier">clone</span>.<span class="ruby-identifier">count</span>, <span class="ruby-comment"># we +clone+ the active record relation to be able to reuse it below.</span>
+    <span class="ruby-identifier">surveys_rel</span>.<span class="ruby-identifier">offset</span>(<span class="ruby-identifier">start</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-identifier">length</span>)
+  ]
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-answers_by_age_groups" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">answers_by_age_groups</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>Get answers by age grouops</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="answers_by_age_groups-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">answers_by_age_groups</span>
+  <span class="ruby-ivar">@answers_by_age_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:answers_by_age_groups</span>) <span class="ruby-operator">||</span>
+    <span class="ruby-constant">Hash</span>[
+      <span class="ruby-operator">*</span><span class="ruby-identifier">answers</span>.
+        <span class="ruby-identifier">joins</span>(<span class="ruby-value">:respondent</span>).
+        <span class="ruby-identifier">group</span>(<span class="ruby-string">&#39;users.age / 10&#39;</span>).
+        <span class="ruby-identifier">count</span>.
+        <span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">age_dec</span>, <span class="ruby-identifier">count</span><span class="ruby-operator">|</span> [<span class="ruby-node">&quot;#{age_dec * 10}#{I18n.t(&#39;survey.plus_year_old&#39;)}&quot;</span> , <span class="ruby-identifier">count</span>] }.
+        <span class="ruby-identifier">flatten</span>
+    ]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-answers_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">answers_count</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To fetch the total number of answers</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="answers_count-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">answers_count</span>
+  <span class="ruby-ivar">@answers_count</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:answers_count</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">answers</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To close a survey</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_active</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-denormalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">denormalize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To denormalize the survey stats to a result record</strong> step 1:
+denormalize the <code>survey</code> to a new <code>result</code> record</p>
+<ul><li>
+<p><code>answers_by_age_groups</code></p>
+</li><li>
+<p><code>answers_count</code></p>
+</li><li>
+<p><code>percentage_yes</code></p>
+</li></ul>
+
+<p>step 2:</p>
+<ul><li>
+<p>delete all the <code>answers</code> of the <code>survey</code></p>
+</li></ul>
+
+<p>Final goal is to keep only the survey main outputs (stats/trends, …) saved
+in a result record. and to cleanup the database (removing the answers
+records, useless at this point).</p>
+          
+          
+
+          
+          <div class="method-source-code" id="denormalize-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">denormalize</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_active?</span> <span class="ruby-comment"># Denormalizing ONLY if the survey is closed</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">present?</span> <span class="ruby-comment"># Already dernormalized!</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">result</span> = <span class="ruby-constant">Result</span>.<span class="ruby-identifier">create</span>(
+    <span class="ruby-identifier">answers_by_age_groups</span><span class="ruby-operator">:</span> <span class="ruby-identifier">answers_by_age_groups</span>,
+    <span class="ruby-identifier">answers_count</span><span class="ruby-operator">:</span> <span class="ruby-identifier">answers_count</span>,
+    <span class="ruby-identifier">percentage_yes</span><span class="ruby-operator">:</span> <span class="ruby-identifier">percentage_yes</span>,
+    <span class="ruby-identifier">survey_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>
+  )
+  <span class="ruby-identifier">save</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">answers</span>.<span class="ruby-identifier">destroy_all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-percentage_no" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">percentage_no</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To fetch the percentage of &#39;no&#39; answers</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="percentage_no-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">percentage_no</span>
+  <span class="ruby-ivar">@percentage_no</span> <span class="ruby-operator">||=</span> (<span class="ruby-value">100.0</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@percentage_yes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-percentage_yes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">percentage_yes</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To fetch the percentage of &#39;yes&#39; answers</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="percentage_yes-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">percentage_yes</span>
+  <span class="ruby-ivar">@percentage_yes</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:percentage_yes</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">answers_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> (<span class="ruby-value">100</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">answers</span>.<span class="ruby-identifier">yes</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">answers_count</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">round</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To humanize the status</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="status-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">status</span>
+  <span class="ruby-identifier">is_active</span> <span class="ruby-operator">?</span> <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;survey.active&#39;</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;survey.closed&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-surveyor_age" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">surveyor_age</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To fetch the surveyor age</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="surveyor_age-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">surveyor_age</span>
+  <span class="ruby-ivar">@surveyor_age</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">surveyor</span>.<span class="ruby-identifier">age</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-surveyor_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">surveyor_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To fetch the surveyor name</strong></p>
+          
+          
+
+          
+          <div class="method-source-code" id="surveyor_name-source">
+            <pre><span class="ruby-comment"># File app/models/survey.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">surveyor_name</span>
+  <span class="ruby-ivar">@surveyor_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">surveyor</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

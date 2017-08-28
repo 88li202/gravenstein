@@ -1,0 +1,42 @@
+<%= div_tag(class: %w(container h-100 d-flex)) do %>
+
+  <%= div_tag(class: %w(jumbotron auto-vertical w-100)) do %>
+
+    <%= user_header(@user_session, t('application.welcome_app', app_name: ApplicationRecord::NAME), notice) %>
+
+    <%= p_tag(class: %w(lead)) do %>
+
+      <%= form_for(@user_session) do %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= label_tag(:user_session_email, class: %w(col-3 col-form-label text-right)){ t('user.email') } %>
+          <%= div_col_xs_6_tag(){ input_tag(id: :user_session_email, name: 'user_session[email]', type: :text, class: %w(form-control)){} } %>
+        <% end %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= label_tag(:user_session_password, class: %w(col-3 col-form-label text-right)){ t('user.password') } %>
+          <%= div_col_xs_6_tag(){ input_tag(id: :user_session_password, name: 'user_session[password]', type: :password, class: %w(form-control)){} } %>
+        <% end %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= label_tag(:user_session_remember_me, class: %w(col-3 col-form-label text-right)){ t('user.remember_me') } %>
+          <%= div_col_xs_6_tag(){ input_tag(id: :user_session_remember_me, name: 'user_session[remember_me]', type: :checkbox, class: %w(form-check-label h-100)){} } %>
+        <% end %>
+
+        <%= div_row_tag(class: %w(form-group)) do %>
+          <%= div_tag(class: %w(col-3)){} %>
+          <%= div_tag(class: %w(col-3)) do %>
+            <%= link_to(t('user.register'), new_user_path, class: %w(form-control btn)) %>
+          <% end %>
+          <%= div_tag(class: %w(col-3)) do %>
+             <%= button_tag(t('user_session.login'), id: :user_session_submit, name: :commit, type: :submit, class: %w(form-control btn btn-primary)) %>
+          <% end %>
+        <% end %>
+
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+<% end %>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class AnswersController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-AnswersController">
+  <h1 id="class-AnswersController" class="class">
+    class AnswersController
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To create an answer (through an XHR call)</strong> Parameters are:</p>
+<ul><li>
+<p>the <code>survey_id</code></p>
+</li><li>
+<p>the <code>yes_no</code> answer</p>
+</li></ul>
+
+<p><code>SPEC</code>: <em>A user can respond to a survey by clicking into it
+from the list discussed above.</em></p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/answers_controller.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">js</span> {
+      <span class="ruby-comment"># Formatting the parameters</span>
+      <span class="ruby-identifier">params</span>                 = <span class="ruby-identifier">answer_params_js</span>.<span class="ruby-identifier">to_h</span>
+      <span class="ruby-identifier">params</span>[<span class="ruby-value">:yes_no</span>]        = <span class="ruby-identifier">params</span>[<span class="ruby-value">:yes_no</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;true&#39;</span>
+      <span class="ruby-identifier">params</span>[<span class="ruby-value">:respondent_id</span>] = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>
+
+      <span class="ruby-comment"># Creating the answer</span>
+      <span class="ruby-ivar">@answer</span> = <span class="ruby-constant">Answer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>)
+      <span class="ruby-ivar">@answer</span>.<span class="ruby-identifier">save</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><strong>To list the answers corresponding to the provided survey</strong>
+With pagination, searching/filtering and ordering. Parameters are:</p>
+<ul><li>
+<p>the <code>survey_id</code></p>
+</li><li>
+<p>the <code>draw</code> counter</p>
+</li><li>
+<p>the <code>start</code> point</p>
+</li><li>
+<p>the <code>length</code></p>
+</li><li>
+<p>the <code>order</code> hash (<code>column</code> id and order +dir+ection)</p>
+</li><li>
+<p>the <code>search</code> hash (<code>value</code> is the criteria)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/answers_controller.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># XHR call to get table/report data.</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> {
+      <span class="ruby-comment"># https://datatables.net/manual/server-side</span>
+      <span class="ruby-comment"># The expected result is an array composed of:</span>
+      <span class="ruby-comment"># - the +draw+ count</span>
+      <span class="ruby-comment"># - the total number of answers for the existing survey (without filtering or paging)</span>
+      <span class="ruby-comment"># - the total number of answers for the existing survey, filtered with the search criteria</span>
+      <span class="ruby-comment"># - the answers (after filtering, sorting and paginating)</span>
+      <span class="ruby-ivar">@draw</span>, <span class="ruby-ivar">@records_total</span>, <span class="ruby-ivar">@records_filtered</span>, <span class="ruby-ivar">@answers</span> = <span class="ruby-constant">Answer</span>.<span class="ruby-identifier">get_answers_report</span>(
+        <span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:survey_id</span>],                       <span class="ruby-comment"># Survey id</span>
+        <span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:draw</span>],                            <span class="ruby-comment"># Draw counter</span>
+        <span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:search</span>].<span class="ruby-identifier">to_h</span>[<span class="ruby-string">&#39;value&#39;</span>],            <span class="ruby-comment"># Search criteria</span>
+        <span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:start</span>],                           <span class="ruby-comment"># Paging first record indicator</span>
+        <span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:length</span>],                          <span class="ruby-comment"># Number of records for the draw</span>
+        <span class="ruby-constant">Hash</span>(<span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:order</span>].<span class="ruby-identifier">to_h</span>[<span class="ruby-string">&#39;0&#39;</span>])[<span class="ruby-string">&#39;column&#39;</span>], <span class="ruby-comment"># Order by the column number</span>
+        <span class="ruby-constant">Hash</span>(<span class="ruby-identifier">answer_params_json</span>[<span class="ruby-value">:order</span>].<span class="ruby-identifier">to_h</span>[<span class="ruby-string">&#39;0&#39;</span>])[<span class="ruby-string">&#39;dir&#39;</span>]     <span class="ruby-comment"># Order direction</span>
+      )
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
